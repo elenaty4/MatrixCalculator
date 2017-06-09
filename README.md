@@ -148,3 +148,30 @@ commmutative, meaning if there exist matrices A and B, &nbsp; A*B =/= B*A</p>
 <p>0 1 2 4</p>
 <p>0 0 0 0</p>
 <p>There are free columns on columns 3 and 4 of the reduced matrix. Column 3 has [-1, 2 0]. The 1 must be added on the 3rd spot which will produce [-1, 2, 1, 0]. The elements (except the added 1) must also be negated which will produce [1, -2, 1, 0], and this vector will be added to the Null Space. The same goes with Column 4 which is [-4, 4, 0]. The 1 must be added on the 4th spot which will produce [-4, 4, 0, 1] and the elements (except the added 1) must be negated which will produce [4, -4, 0, 1]. This vector is also added in the Null Space, hence <b>the Null Space is { [1,-2,1,0], [4,-4,0,1] }</b></p>
+
+<h3><b>Column Space</b></h3>
+<p>The Column Space calculator produces a basis or a set of vectors. A matrix in reduced form is needed to calculate the Column Space because the calculator will check which columns are pivot columns. If there are no pivot columns then the Column Space is empty. Pivot columns are added to the Column Space but the pivot columns in the basis are NOT reduced.</p>
+<p>For example, if a user inputted this matrix below: </p>
+<p>2 4 6 8</p>
+<p>0 0 0 0</p>
+<p>0 1 2 4</p>
+<p><b>The Column Space will be {[2,0,0], [4,0,1]}</b>, which is the first two columns of the matrix. This is because in the matrix's reduced form only the first 2 columns are pivot columns.</p>
+
+<h3><b>Row Space</b><h3>
+<p>The Row Space calculator functions like Column Space except that it produces a set of pivot rows in reduced form. If there are no pivot rows then the Row Space is empty.</p>
+<p>For example, if a user inputted this matrix below: </p>
+<p>2 4 6 8</p>
+<p>0 0 0 0</p>
+<p>0 1 2 4</p>
+<p>The Row Space will be {(1, 0, -1, -4), (0, 1, 2, 4)} because these are the pivot rows in the reduced form of that matrix: </p>
+<p>1 0 -1 -4</p>
+<p>0 1 2 4</p>
+<p>0 0 0 0</p>
+
+<h3><b>Rank</b></h3>
+<p>The Rank of a matrix is the number of pivot columns in a matrix, or in other words, the dimension of Column Space or Row Space. The dimension of a basis is the number of elements in that basis. Since Column Space consist of all pivot columns, then the dimension of Column Space is the number of pivots. The number of pivots represents the Rank.</p>
+<p>For example if a user inputted this matrix: </p>
+<p>2 4 6</p>
+<p>8 0 2</p>
+<p>4 6 8</p>
+<p>The Rank will be 3 because the matrix in reduced form has 3 pivot columns.</p>
