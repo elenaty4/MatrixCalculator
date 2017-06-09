@@ -95,7 +95,7 @@ commmutative, meaning if there exist matrices A and B, &nbsp; A*B =/= B*A</p>
 <p>Compare it with its row echelon form</p>
 
 <h3><b>Inverse</b></h3>
-<p>The Inverse calculator only works with square matrices (nxn matrices), because only square matrices are invertible. The Inverse Calculator creates an identity matrix that is the same size as the inputted nxm matrix and join the two matrices together, creating a joint matrix m rows and n*2 columns. For example, if a user inputs this matrix: </p>
+<p>The Inverse calculator only works with square matrices (nxn matrices), because only linearly independent square matrices are invertible. The Inverse Calculator creates an identity matrix that is the same size as the inputted nxm matrix and join the two matrices together, creating a joint matrix m rows and n*2 columns. For example, if a user inputs this matrix: </p>
 <p>1 2 4</p>
 <p>2 0 2</p>
 <p>2 0 0</p>
@@ -112,3 +112,26 @@ commmutative, meaning if there exist matrices A and B, &nbsp; A*B =/= B*A</p>
 <p>0.5 -1 &nbsp; 0.75</p>
 <p>0 &nbsp; 0.5 -0.5</p>
 <p>Note that the Inverse calculator can tell if a nxn matrix is invertible by checking if there are pivots = n. If a matrix is NOT invertible then it will not display any result and say that the matrix is not invertible.</p>
+
+<h3><b>Transpose</b></h3>
+<p>The transpose of a matrix is when the columns of the matrix becomes the rows and the rows becomes the columns. To get a clear picture of it, here's an example:</p>
+<p>2 4 6 1</p>
+<p>8 0 2 2</p>
+<p>4 6 8 3</p>
+<p>The transpose of the matrix is:</p>
+<p>2 8 4</p>
+<p>4 0 6</p>
+<p>6 2 8</p>
+<p>1 2 3</p>
+
+<h3><b>Determinant</b></h3>
+<p>The Determinant can only work for square matrices (nxn matrices). There are different ways to find the determinant but in this calculator, the determinant is calculated during reduced row reduction. The reduced row reduction formula for the determinant is as follows: </p>
+<p><b>Row Swapping -</b>If a row is swapped, the determinant will be negative. If the row swap occurs an even number of times, then the determinant will stay positive.</p>
+<p><b>Scaling -</b>When a row is multiplied by a scalar c, the determinant is ALSO multiplied by c.</p>
+<p><b>Row Replacement -</b>When row replacement occurs, nothing happens to the determinant</p>
+<p>Once the matrix is in its reduced form, the calculator checks if the matrix's columns are linearly independent meaning, if there is a pivot in every column(and row). If the matrix is NOT linearly independent, then the determinant is 0. If the matrix IS linearly independent then the determinant is the reciprocal of the product of scalars and is negative depending on how many times Row Swapping occured.</p>
+<p>For example, if the user inputted this matrix below: </p>
+<p>2 4 6</p>
+<p>8 0 2</p>
+<p>4 6 8</p>
+<p>The calculator will display the determinant value which is <b>40</b>. Why 40? During the row reduction, the rows has been swapped an even number of times and the scalars, (1/2), (1/16), and (4/5) were all multipied together to get (1/40). The reciprocal of (1/40) is 40. The reciprocal occurs because the matrix in its reduced form is linearly independent, therefore the determinant cannot be 0.</p>
