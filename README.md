@@ -157,7 +157,7 @@ commmutative, meaning if there exist matrices A and B, &nbsp; A*B =/= B*A</p>
 <p>0 1 2 4</p>
 <p><b>The Column Space will be {[2,0,0], [4,0,1]}</b>, which is the first two columns of the matrix. This is because in the matrix's reduced form only the first 2 columns are pivot columns.</p>
 
-<h3><b>Row Space</b><h3>
+<h3><b>Row Space</b></h3>
 <p>The Row Space calculator functions like Column Space except that it produces a set of pivot rows in reduced form. If there are no pivot rows then the Row Space is empty.</p>
 <p>For example, if a user inputted this matrix below: </p>
 <p>2 4 6 8</p>
