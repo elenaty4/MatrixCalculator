@@ -63,3 +63,52 @@ commmutative, meaning if there exist matrices A and B, &nbsp; A*B =/= B*A</p>
 <p>The result will be a 2x2 matrix: </p>
 <p>14 17</p>
 <p>32 38</p>
+
+<h3><b>Row Echelon</b></h3>
+<p>A matrix is in Row Echelon form if: </p>
+<p>1. In pivot columns, there are zeros below every pivot</p>
+<p>2. The pivots can be 1 or any other number but the pivots cannot be 0. Zeros can never be pivots</p>
+<p>In this matrix calculator, the pivots in row echelon form are always 1.</p>
+<p>Different operations are performed when getting the form. <b>Swapping Rows</b> to make the matrix be in echelon form, <b>Scaling Rows</b> when the pivots are not 1, and <b>Row Replacement</b> to get zeros below the pivots in the pivot columns</p>
+<p>Here's an example: This matrix below</p>
+<p>2 4 6</p>
+<p>8 0 2</p>
+<p>4 6 8</p>
+<p>Will have this row echelon form:</p>
+<p>1 2 3</p>
+<p>0 1 2</p>
+<p>0 0 1</p>
+
+<h3><b>Reduced Row Echelon</b></h3>
+<p>A matrix is in Reduced Row Echelon form if: </p>
+<p>1. In pivot columns, there are zeros below AND above every pivot</p>
+<p>2. ALL pivots must be 1</p>
+<p>Different operations are performed when getting the form. <b>Swapping Rows</b> to make the matrix be in echelon form, <b>Scaling Rows</b> when the pivots are not 1, and <b>Row Replacement</b> to get zeros above and below the pivots in the pivot columns</p>
+<p>Here's an example: This same matrix below</p>
+<p>2 4 6</p>
+<p>8 0 2</p>
+<p>4 6 8</p>
+<p>Will have this reduced row echelon form:</p>
+<p>1 0 0</p>
+<p>0 1 0</p>
+<p>0 0 1</p>
+<p>Compare it with its row echelon form</p>
+
+<h3><b>Inverse</b></h3>
+<p>The Inverse calculator only works with square matrices (nxn matrices), because only square matrices are invertible. The Inverse Calculator creates an identity matrix that is the same size as the inputted nxm matrix and join the two matrices together, creating a joint matrix m rows and n*2 columns. For example, if a user inputs this matrix: </p>
+<p>1 2 4</p>
+<p>2 0 2</p>
+<p>2 0 0</p>
+<p>The calculator will create this joint matrix</p>
+<p>1 2 4 | 1 0 0</p>
+<p>2 0 2 | 0 1 0</p>
+<p>2 0 0 | 0 0 1</p>
+<p>And row reduce it by using the RREF calculator</p>
+<p>1 0 0 | 0 &nbsp; 0 &nbsp; 0.5</p>
+<p>0 1 0 | 0.5 -1 &nbsp; 0.75</p>
+<p>0 0 1 | 0 &nbsp; 0.5 -0.5</p>
+<p>The second half of the matrix is the INVERSE matrix</p>
+<p>0 &nbsp; 0 &nbsp; 0.5</p>
+<p>0.5 -1 &nbsp; 0.75</p>
+<p>0 &nbsp; 0.5 -0.5</p>
+<p>Note that the Inverse calculator can tell if a nxn matrix is invertible by checking if there are pivots = n. If a matrix is NOT invertible then it will not display any result and say that the matrix is not invertible.</p>
