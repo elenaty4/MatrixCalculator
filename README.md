@@ -135,3 +135,16 @@ commmutative, meaning if there exist matrices A and B, &nbsp; A*B =/= B*A</p>
 <p>8 0 2</p>
 <p>4 6 8</p>
 <p>The calculator will display the determinant value which is <b>40</b>. Why 40? During the row reduction, the rows has been swapped an even number of times and the scalars, (1/2), (1/16), and (4/5) were all multipied together to get (1/40). The reciprocal of (1/40) is 40. The reciprocal occurs because the matrix in its reduced form is linearly independent, therefore the determinant cannot be 0.</p>
+
+<h3><b>Null Space</b></h3>
+<p>The Null Space calculator doesn't produce a matrix nor a value. It produces a basis or a set of vectors. The Null Space is calculated by putting the matrix in reduced row echelon form. After the matrix is in reduced form, the calculator checks if there are free columns. Free Columns are columns that doesn't have a pivot. If all of the matrix's columns are linearly independent, then the Null Space is an empty set.</p>
+<p>If there are free columns, then free variables exist and the Null Space is not empty. Usually we put the matrix in parametric vector form and get add the parametric vectors into the Null Space basis, but in this calculator, it uses a different algorithm. It NEGATES the numbers in the free column and add a 1 to the nth spot in the nth column. The vectors in the Null Space has the same number of elements as the number of columns.</p>
+<p>For example, if a user inputted this matrix below: </p>
+<p>2 4 6 8</p>
+<p>0 0 0 0</p>
+<p>0 1 2 4</p>
+<p>The reduced matrix will look like this: </p>
+<p>1 0 -1 -4</p>
+<p>0 1 2 4</p>
+<p>0 0 0 0</p>
+<p>There are free columns on columns 3 and 4 of the reduced matrix. Column 3 has [-1, 2 0]. The 1 must be added on the 3rd spot which will produce [-1, 2, 1, 0]. The elements (except the added 1) must also be negated which will produce [1, -2, 1, 0], and this vector will be added to the Null Space. The same goes with Column 4 which is [-4, 4, 0]. The 1 must be added on the 4th spot which will produce [-4, 4, 0, 1] and the elements (except the added 1) must be negated which will produce [4, -4, 0, 1]. This vector is also added in the Null Space, hence <b>the Null Space is { [1,-2,1,0], [4,-4,0,1] }</b></p>
