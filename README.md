@@ -38,3 +38,28 @@ However, these calculators will be added in the future once a proper algorithm f
 <p>Column Space</p>
 <p>Row Space</p>
 <p>Rank</p>
+
+<h3><b>Addition</b></h3>
+<p>Addition functions like addition. What is needed for the addition calculator to work is having both matrices be the same size. When 
+two mxn matrices gets added together the numbers in each cell in one matrix gets added by the corresponding cells of the second matrix. For example if the user inputted these two matrices: </p>
+<p>1 2 3  &nbsp;  &nbsp;    2 4 6</p>
+<p>4 5 6  &nbsp;  &nbsp;    8 0 2</p> 
+<p>The result will be: </p>
+<p>3 6 9</p>
+<p>12 5 8</p>
+
+<h3><b>Subtraction</b></h3>
+<p>Subtraction function the same way as the Addtion calculator except that we're subtracting the numbers in each cell, not adding them</p>
+
+<h3><b>Multiplication</b></h3>
+<p>Multiplication between matrices doesn't function the same way as Addition and Subtraction. In order for Multiplication to work, an nxm matrix must be multiplied with an mxk matrix. In other words, the number of columns on the first matrix must be the same as the number of rows on the second matrix.</p>
+<p>Another difference about matrix mutliplication is that it doesn't work like regular multiplication. Matrix multiplication is not 
+commmutative, meaning if there exist matrices A and B, &nbsp; A*B =/= B*A</p>
+<p>One of the reasons is because if we multiply an nxm matrix with an mxk matrix, the result will be an nxk matrix. In other words, the product matrix will have the same number of rows as the 1st matrix and the same number of columns as the 2nd matrix. Another reason is that the formula for matrix multiplication is that nxm matrix A will be multiplied by ALL of the columns of mxk matrix B. Specifically, <b><i>A*B = [A*b_1, A*b_2 . . . A*b_k]</i></b> where b represents the columns of B. Therefore, <b><i>B*A = [B*a_1, B*a_2 . . . B*a_m]</i></b> which proves that A*B =/= B*A</p>
+<p>Here's an example: If a user inputted these two matrices where A is 2x3 and B is 3x2: </p>
+<p>1 2 3 &nbsp;  &nbsp; 1 0</p>
+<p>4 5 6 &nbsp;  &nbsp; 2 4</p> 
+<p> &nbsp;  &nbsp; &nbsp;  &nbsp; &nbsp;  &nbsp; &nbsp;3 3</p>
+<p>The result will be a 2x2 matrix: </p>
+<p>14 17</p>
+<p>32 38</p>
