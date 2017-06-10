@@ -1,5 +1,5 @@
 # MatrixCalculator
-<p><b>Please note that the program is not complete. It has a few bugs and missing pieces: </b></p>
+<p><b>Please note that the program is not 100% complete. It has a few small bugs and missing pieces: </b></p>
 <h4>Bugs: </h4>
 <p><b>1. RREF</b></p> 
 <p>In the Gaussian Elimination (Reduced Row Echelon) calculator, it works for many different matrices except for some. 
