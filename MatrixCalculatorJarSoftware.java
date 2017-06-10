@@ -12,7 +12,8 @@ import javax.swing.JPanel;
  * Matrix Calculator calculates different Linear Algebra-related operations
  * See ReadMe.md (https://github.com/elenaty4/MatrixCalculator) for more 
  * information 
- * 
+ *  
+ * This is the DRIVER
  */
 public class MatrixCalculatorJarSoftware {
 
