@@ -61,7 +61,7 @@ public class AddSubtractMatrixInput extends AppCompatActivity {
     {
         //It collects what the user inputted too
         //Checks if one of the fields are empty
-        //But how to get the values from each EditText?
+        //HOW TO GET THE VALUE OF EACH EDITTEXT FIELD?
 
     }
 
@@ -89,6 +89,8 @@ public class AddSubtractMatrixInput extends AppCompatActivity {
             // ITERATE THOUGH EACH
             for(int k = 0; k < childSize; k++)
             {
+                //HOW TO GET THE VALUE OF EACH EDITTEXT FIELD?
+                //THIS CODE BELOW DOESN'T WORK
                 View v = gridChild.getChildAt(k);
                 if (v instanceof EditText) {
                     element = (EditText) gridChild.getChildAt(k);
