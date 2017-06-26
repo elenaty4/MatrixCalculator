@@ -19,7 +19,7 @@ that calculates with a reduced matrix, the results will most likely be incorrect
 <p><b>2. Floating Point Values & Negative Zero</b></p>
 <p>Negative zeros will sometimes appear as a result in some of the calculations. That's because floating point numbers are used in code 
 to calculate. This also means that if some fractions appear as a result, it'll be in decimal form instead of Rational form. Furthermore, 
-the numbers in the results will also display numbers with one decimal place, even if they are whole numbers.</p>
+the numbers in the result will have one decimal place, even if they are whole numbers.</p>
 
 <p><b>3. Eigenvalues and Diagonalization</b></p>
 <p>The Eigenvalues and Diagonalization calculators were supposed to be in the program, but they are taken out due to their complexity. 
