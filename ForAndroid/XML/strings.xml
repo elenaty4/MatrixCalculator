@@ -1,0 +1,19 @@
+<resources>
+    <string name="app_name">MatrixCalculator</string>
+
+    <string-array name="calculation_types">
+        <item>Addition</item>
+        <item>Subtraction</item>
+        <item>Multiplication</item>
+        <item>Row Echelon</item>
+        <item>Reduced Row Echelon</item>
+        <item>Inverse</item>
+        <item>Transpose</item>
+        <item>Determinant</item>
+        <item>Null Space</item>
+        <item>Column Space</item>
+        <item>Row Space</item>
+        <item>Rank</item>
+    </string-array>
+
+</resources>
