@@ -6,7 +6,6 @@
     android:layout_height="match_parent"
     tools:context="com.myblueshare.matrixcalculator.matrixcalculator.AddSubtractMatrixInput2">
 
-
     <RelativeLayout
         android:layout_width="368dp"
         android:layout_height="495dp"
@@ -14,7 +13,7 @@
         tools:layout_editor_absoluteY="8dp">
 
         <TextView
-            android:id="@+id/textView10"
+            android:id="@+id/textView13"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_alignParentLeft="true"
@@ -25,61 +24,61 @@
             android:text="Please input the numbers on both matrices." />
 
         <TextView
-            android:id="@+id/textView11"
+            android:id="@+id/textView14"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_alignLeft="@+id/textView10"
-            android:layout_alignStart="@+id/textView10"
-            android:layout_below="@+id/textView10"
-            android:layout_marginTop="21dp"
-            android:text="Matrix2: "
-            android:textStyle="bold" />
-
-        <GridView
-            android:id="@+id/grid"
-            android:layout_width="match_parent"
-            android:layout_height="300dp"
-            android:layout_alignLeft="@+id/textView11"
-            android:layout_alignParentEnd="true"
-            android:layout_alignParentRight="true"
-            android:layout_alignStart="@+id/textView11"
-            android:layout_below="@+id/textView11" />
+            android:text="One of the fields is not a number. Please try again: "
+            android:visibility="invisible"
+            android:textColor="#ff0000"
+            android:textStyle="bold"
+            android:layout_below="@+id/textView13"
+            android:layout_alignLeft="@+id/textView13"
+            android:layout_alignStart="@+id/textView13" />
 
         <TextView
-            android:id="@+id/textView8"
+            android:id="@+id/textView15"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_alignLeft="@+id/grid"
-            android:layout_alignStart="@+id/grid"
-            android:layout_below="@+id/grid"
-            android:layout_marginTop="15dp"
-            android:text="Please fill in all of the fields"
-            android:textColor="#FF0000"
-            android:visibility="invisible" />
+            android:text="Matrix 2:"
+            android:textStyle="bold"
+            android:layout_below="@+id/textView14"
+            android:layout_alignLeft="@+id/textView14"
+            android:layout_alignStart="@+id/textView14" />
+
+        <GridLayout
+            android:id="@+id/grid2"
+            android:layout_width="match_parent"
+            android:layout_height="700px"
+            android:layout_centerVertical="true"
+            android:layout_alignLeft="@+id/button4"
+            android:layout_alignStart="@+id/button4">
+
+        </GridLayout>
 
         <Button
-            android:id="@+id/button4"
+            android:id="@+id/button6"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_alignLeft="@+id/textView8"
-            android:layout_alignStart="@+id/textView8"
-            android:layout_below="@+id/textView8"
-            android:layout_marginTop="11dp"
+            android:text="Set Empty Fields to Zero"
             android:onClick="setEmptyToZero"
-            android:text="Set Empty Fields to Zero" />
+            android:layout_alignParentBottom="true"
+            android:layout_alignLeft="@+id/textView14"
+            android:layout_alignStart="@+id/textView14"
+            android:layout_marginBottom="20dp" />
 
         <Button
-            android:id="@+id/button5"
+            android:id="@+id/button7"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_alignBaseline="@+id/button4"
-            android:layout_alignBottom="@+id/button4"
-            android:layout_marginLeft="20dp"
-            android:layout_marginStart="20dp"
-            android:layout_toEndOf="@+id/button4"
-            android:layout_toRightOf="@+id/button4"
+            android:text="Submit"
             android:onClick="submitButton"
-            android:text="Submit" />
+            android:layout_marginLeft="13dp"
+            android:layout_marginStart="13dp"
+            android:layout_alignBaseline="@+id/button6"
+            android:layout_alignBottom="@+id/button6"
+            android:layout_toRightOf="@+id/button6"
+            android:layout_toEndOf="@+id/button6" />
 
     </RelativeLayout>
+
 </android.support.constraint.ConstraintLayout>
