@@ -1,24 +1,23 @@
 package com.myblueshare.matrixcalculator.matrixcalculator;
 
+import android.content.Intent;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.text.InputType;
 import android.view.View;
 import android.widget.EditText;
-import android.widget.GridView;
-
-import java.util.ArrayList;
-import java.util.List;
+import android.widget.GridLayout;
+import android.widget.TextView;
 
 public class MultMatrixInput extends AppCompatActivity {
 
-    private MatrixAdapter adapter;
-    private List<Matrix> matrixList;
-    private GridView gridView;
     private int rows1;
-    private int columns1;
     private int rows2;
+    private int columns1;
     private int columns2;
     private String calcType;
+    private GridLayout gd;
+    private double[][] matrix;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -33,63 +32,94 @@ public class MultMatrixInput extends AppCompatActivity {
         columns2 = extras.getInt("columns2");
         calcType = extras.getString("calc_type");
 
-        //MATRIX 1 INPUT
+        //Use GridLayout Instead
+        gd = (GridLayout) findViewById(R.id.grid3);
+        //This is for the first matrix
+        gd.setRowCount(rows1);
+        gd.setColumnCount(columns1);
+        EditText edt;
 
-        // INITIALISE THE GRID FOR MATRIX 1
-        gridView = (GridView)findViewById(R.id.grid2);
-        gridView.setNumColumns(columns1);
-
-        // CREATE A LIST OF MATRIX OBJECTS
-        matrixList = new ArrayList<>(); //THIS IS ONLY FOR THE MATRIX OF EDIT_TEXTS
-        //Getting the matrix values will come from the user input
-
-        // ADD SOME CONTENTS TO EACH ITEM
-        for (int i=0;i<rows1;i++)
+        for(int r = 0; r < rows1*columns1; r++)
         {
-            for (int j=0;j<columns1;j++)
-            {
-                matrixList.add(new Matrix(i,j));
-            }
+            edt = new EditText(this);
+            edt.setInputType(InputType.TYPE_NUMBER_FLAG_DECIMAL);
+            edt.setWidth(100);
+            gd.addView(edt);
         }
-
-        // CREATE AN ADAPTER  (MATRIX ADAPTER)
-        adapter = new MatrixAdapter(getApplicationContext(),matrixList);
-
-        // ATTACH THE ADAPTER TO GRID
-        gridView.setAdapter(adapter);
 
     }
 
-    public void nextMatrix(View view) //The next button goes to the next matrix
+    public void setEmptyToZero()
     {
-        //It collects what the user inputted too
-        //Checks if one of the fields are empty
-        //But how to get the values from each EditText?
-
-    }
-
-    public void setEmptyToZero(View view) //Fills the empty text boxes to zero
-    {
-        //how to make the program add zeros to the text fields?
-        //iterate through the textField matrix first. If an empty field is
-        //found, add zero to it
-        EditText textField;
-        boolean fieldIsEmpty;
-
-        // ITERATE THROUGH EACH CHILDS
-        EditText element;
-        String cell_value;
-
-        //Iterate through GridView
-        int gridSize = gridView.getChildCount();
-
-        for(int i=0; i<gridSize; i++)
+        //Iterate through whole GridLayout to check if there are empty fields
+        String value;
+        EditText edt;
+        for(int i = 0; i < rows1*columns1; i++)
         {
-            if(gridView.getChildAt(i) instanceof EditText)
+            edt = (EditText) gd.getChildAt(i);
+            value = edt.getText().toString();
+            if(value.equals(""))
             {
-                element = (EditText) gridView.getChildAt(i);
-                cell_value = element.getText().toString();
+                ((EditText) gd.getChildAt(i)).setText("0");
             }
         }
+    }
+
+    public void nextMatrix(View view)
+    {
+        Intent intent = new Intent(this, MultMatrixInput2.class);
+        //First check if there are empty spaces and string characters
+
+        boolean invalidInput = false;
+        TextView errortxt = (TextView) findViewById(R.id.textView17);
+        String value;
+        EditText edt;
+        for(int j = 0; j < rows1*columns1; j++)
+        {
+            edt = (EditText) gd.getChildAt(j);
+            value = edt.getText().toString();
+            //checking for empty spaces
+            if(value.equals(""))
+            {
+                invalidInput = true;
+                errortxt.setVisibility(View.VISIBLE); //make the error message visible
+            }
+            //checking if input is a number
+            //Do this later because wifi is being a betch
+
+        }
+
+
+        if(!invalidInput)
+        {
+            //get the matrix
+            int i = 0;
+            matrix = new double[rows1][columns1];
+            for(int r = 0; r < rows1; r++)
+            {
+                for(int c = 0; c < columns1; c++)
+                {
+                    //how to put array into matrix?
+                    if(i < rows1*columns1)
+                    {
+                        edt = (EditText) gd.getChildAt(i);
+                        value = edt.getText().toString();
+                        matrix[r][c] = Double.parseDouble(value);
+                        i++;
+                    }
+                }
+            }
+
+            intent.putExtra("rows1", rows1);
+            intent.putExtra("columns1", columns1);
+            intent.putExtra("rows2", rows2);
+            intent.putExtra("columns2", columns2);
+            intent.putExtra("calc_type", calcType);
+            Bundle mBundle = new Bundle();
+            mBundle.putSerializable("matrix", matrix);
+            intent.putExtras(mBundle);
+            startActivity(intent);
+        }
+
     }
 }
