@@ -51,7 +51,7 @@ public class MultMatrixInput2 extends AppCompatActivity {
 
     }
 
-    public void setEmptyToZero()
+    public void setEmptyToZero(View view)
     {
         //Iterate through whole GridLayout to check if there are empty fields
         String value;
