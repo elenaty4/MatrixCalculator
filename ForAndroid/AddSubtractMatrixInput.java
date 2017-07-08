@@ -44,7 +44,7 @@ public class AddSubtractMatrixInput extends AppCompatActivity {
 
     }
 
-    public void setEmptyToZero()
+    public void setEmptyToZero(View view)
     {
         //Iterate through whole GridLayout to check if there are empty fields
         String value;
@@ -55,7 +55,7 @@ public class AddSubtractMatrixInput extends AppCompatActivity {
             value = edt.getText().toString();
             if(value.equals(""))
             {
-                ((EditText) gd.getChildAt(i)).setText(0); //This doesn't work
+                ((EditText) gd.getChildAt(i)).setText("0"); //This doesn't work
             }
         }
     }
